@@ -13,9 +13,10 @@ npm install turbo-audio-dubu
 yarn add turbo-audio-dubu
 ```
 
-## NPM Package
+## Links
 
-https://www.npmjs.com/package/turbo-audio-dubu
+- NPM Package: https://www.npmjs.com/package/turbo-audio-dubu
+- GitHub Repository: https://github.com/kim-jiha95/turbo-audio
 
 ## Features
 
