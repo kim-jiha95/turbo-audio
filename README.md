@@ -2,6 +2,9 @@
 
 A React Native Turbo Module for advanced audio playback and control.
 
+[![npm version](https://img.shields.io/npm/v/turbo-audio-dubu.svg)](https://www.npmjs.com/package/turbo-audio-dubu)
+[![npm downloads](https://img.shields.io/npm/dm/turbo-audio-dubu.svg)](https://www.npmjs.com/package/turbo-audio-dubu)
+
 ## Installation
 
 ```sh
@@ -9,6 +12,10 @@ npm install turbo-audio-dubu
 # or
 yarn add turbo-audio-dubu
 ```
+
+## NPM Package
+
+https://www.npmjs.com/package/turbo-audio-dubu
 
 ## Features
 
