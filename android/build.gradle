@@ -1,0 +1,65 @@
+buildscript {
+    ext.safeExtGet = { prop, fallback ->
+        rootProject.ext.has(prop) ? rootProject.ext.get(prop) : fallback
+    }
+    repositories {
+        google()
+        gradlePluginPortal()
+    }
+    dependencies {
+        classpath("com.android.tools.build:gradle:7.3.1")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.22")
+    }
+}
+
+apply plugin: 'com.android.library'
+apply plugin: 'com.facebook.react'
+apply plugin: 'org.jetbrains.kotlin.android'
+
+android {
+    compileSdkVersion safeExtGet('compileSdkVersion', 33)
+    namespace "com.turboaudio"
+
+    defaultConfig {
+       minSdkVersion safeExtGet('minSdkVersion', 21)
+       targetSdkVersion safeExtGet('targetSdkVersion', 33)
+   }
+
+    lint {
+        baseline = file("lint-baseline.xml")
+        abortOnError false
+        checkReleaseBuilds false
+        quiet true
+        ignoreWarnings true
+        disable 'NewApi'
+        disable 'InvalidPackage'
+        disable 'OldTargetApi'
+        disable 'GradleDependency'
+    }
+
+   lintOptions {
+       disable 'NewApi'
+       abortOnError false
+       checkReleaseBuilds false
+   }
+
+   buildTypes {
+       release {
+           minifyEnabled false
+           proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+       }
+   }
+}
+
+repositories {
+    mavenCentral()
+    google()
+}
+
+dependencies {
+    implementation 'com.facebook.react:react-native'
+    implementation "androidx.media:media:1.6.0"
+    implementation "com.google.android.exoplayer:extension-mediasession:2.19.1"
+    implementation "com.google.android.exoplayer:exoplayer-core:2.19.1"
+    implementation "com.google.android.exoplayer:exoplayer-ui:2.19.1"
+}

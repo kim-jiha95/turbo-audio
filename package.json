@@ -1,0 +1,29 @@
+{
+  "name": "turbo-audio-dubu",
+  "version": "1.0.0",
+  "description": "React Native Turbo Module for audio functionalities",
+  "main": "spec/index.ts",
+  "scripts": {
+    "prepare": "npm run build",
+    "build": "tsc"
+  },
+  "keywords": [
+    "react-native",
+    "audio",
+    "turbo-module"
+  ],
+  "author": "",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
+  "codegenConfig": {
+    "name": "TurboAudioSpec",
+    "type": "all",
+    "jsSrcsDir": "spec"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
+}
