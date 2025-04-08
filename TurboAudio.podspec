@@ -11,12 +11,12 @@ Pod::Spec.new do |s|
   # description, homepage, license, authors etc.
   # to keep it simple, I added them as inline strings
   # feel free to edit them however you want!
-  s.homepage        = package["repository"]["url"].gsub(/\.git$/, "")
+  s.homepage        =  "https://github.com/kim-jiha95/turbo-audio"
   s.summary         = "Sample Audio module"
   s.license         = "MIT"
   s.platforms       = { :ios => "13.0" }
   s.author          = "conner"
-  s.source          = { :git => package["repository"], :tag => "#{s.version}" }
+  s.source          = { :git => "https://github.com/kim-jiha95/turbo-audio.git", :tag => s.version.to_s }
   # Define the source files extension that we want to recognize
   # Soon, we'll create the ios folder with our module definition
   s.source_files    = "ios/*.{h,m,mm}"
