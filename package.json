@@ -1,6 +1,6 @@
 {
   "name": "turbo-audio-dubu",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "React Native Turbo Module for audio functionalities",
   "main": "spec/index.ts",
   "scripts": {

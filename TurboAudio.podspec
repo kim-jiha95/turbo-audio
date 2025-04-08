@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.homepage        = "https://reactnativecrossroads.com"
   s.summary         = "Sample Audio module"
   s.license         = "MIT"
-  s.platforms       = { :ios => 13.0 }
+  s.platforms       = { :ios => "13.0" }
   s.author          = "conner"
   s.source          = { :git => package["repository"], :tag => "#{s.version}" }
   # Define the source files extension that we want to recognize
