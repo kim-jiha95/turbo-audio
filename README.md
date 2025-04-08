@@ -13,6 +13,22 @@ npm install turbo-audio-dubu
 yarn add turbo-audio-dubu
 ```
 
+### iOS Setup
+
+Add the following permissions to your `Info.plist`:
+
+```xml
+<!-- Background audio playback -->
+<key>UIBackgroundModes</key>
+<array>
+    <string>audio</string>
+</array>
+
+<!-- Microphone permission (if needed) -->
+<key>NSMicrophoneUsageDescription</key>
+<string>We need access to your microphone for audio recording.</string>
+```
+
 ## Links
 
 - NPM Package: https://www.npmjs.com/package/turbo-audio-dubu
@@ -29,20 +45,20 @@ yarn add turbo-audio-dubu
 ## Usage
 
 ```javascript
-import { TurboAudio } from 'turbo-audio-dubu';
+import { TurboAudio } from "turbo-audio-dubu";
 
 // Load and play audio with metadata
 const playAudio = async () => {
   try {
     const result = await TurboAudio.loadAndPlayAudio(
-      "https://example.com/audio.mp3", 
+      "https://example.com/audio.mp3",
       {
         title: "Amazing Song",
         artist: "Famous Artist",
-        artwork: "https://example.com/artwork.jpg" // Optional album art
+        artwork: "https://example.com/artwork.jpg", // Optional album art
       }
     );
-    
+
     console.log(`Audio loaded successfully: ${result.success}`);
     console.log(`Total duration: ${result.duration} seconds`);
   } catch (error) {
@@ -55,15 +71,15 @@ const controlPlayback = async () => {
   // Pause current audio
   const paused = await TurboAudio.pauseAudio();
   console.log(`Audio paused: ${paused}`);
-  
+
   // Resume playback
   const resumed = await TurboAudio.resumeAudio();
   console.log(`Audio resumed: ${resumed}`);
-  
+
   // Stop and unload audio
   const stopped = await TurboAudio.stopAudio();
   console.log(`Audio stopped: ${stopped}`);
-  
+
   // Seek to specific position (in seconds)
   const seeked = await TurboAudio.seekAudio(45.5);
   console.log(`Seeked to position: ${seeked}`);
@@ -86,6 +102,7 @@ const checkStatus = async () => {
 Loads and starts playing an audio file.
 
 Parameters:
+
 - `uri`: URL or file path of the audio to play
 - `trackInfo`: Object containing track metadata
   - `title`: Song title (required)
@@ -93,6 +110,7 @@ Parameters:
   - `artwork`: URL to album artwork (optional)
 
 Returns: Promise resolving to object with:
+
 - `duration`: Total duration in seconds
 - `success`: Boolean indicating if loading was successful
 
@@ -119,6 +137,7 @@ Returns: Promise resolving to success status
 Seeks to a specific position in the audio.
 
 Parameters:
+
 - `position`: Target position in seconds
 
 Returns: Promise resolving to success status
@@ -128,6 +147,7 @@ Returns: Promise resolving to success status
 Gets the current playback status.
 
 Returns: Promise resolving to object with:
+
 - `duration`: Total duration in seconds
 - `position`: Current position in seconds
 - `isPlaying`: Boolean indicating if audio is currently playing
