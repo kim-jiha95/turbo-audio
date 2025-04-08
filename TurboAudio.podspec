@@ -5,7 +5,7 @@ package = JSON.parse(File.read(File.join(__dir__, "./package.json")))
 # Define the configuration of the package
 Pod::Spec.new do |s|
   # Name and version are taken directly from the package.json
-  s.name            = package["name"]
+  s.name            = "TurboAudio"
   s.version         = package["version"]
   # Optionally you can add other fields in package.json like
   # description, homepage, license, authors etc.
@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.homepage        = "https://reactnativecrossroads.com"
   s.summary         = "Sample Audio module"
   s.license         = "MIT"
-  s.platforms       = { :ios => min_ios_version_supported }
+  s.platforms       = { :ios => 13.0 }
   s.author          = "conner"
   s.source          = { :git => package["repository"], :tag => "#{s.version}" }
   # Define the source files extension that we want to recognize
